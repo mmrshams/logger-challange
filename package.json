@@ -7,6 +7,9 @@
     "test": "tests"
   },
   "dependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.3",
+    "ts-jest": "^27.1.1",
     "yargs": "^17.3.0"
   },
   "devDependencies": {
@@ -22,6 +25,7 @@
   "scripts": {
     "build": "tsc",
     "start": "yarn build && node --require dotenv/config dist/src/main.js --input ./app.log --output ./errors.json --level error",
+    "test": "jest --config ./jest-config.json",
     "watch": "nodemon --ext js,json,ts --watch ./src --exec \"yarn start\"",
     "lint": "gts lint",
     "fix": "gts fix",

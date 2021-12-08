@@ -17,6 +17,7 @@ export default class LogParser extends Parser<LogParserInputDto> {
     }
     data!: Array<LogParserInputDto>
     parse(string: string, level: LogLevelType): Array<LogParserInputDto> {
+        if (!string || !level) throw new Error('please enter valid inputs')
         const result: Array<LogParserInputDto> = []
         const logs = this.transformer.split(string, '\n')
         logs.forEach(log => {
