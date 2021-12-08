@@ -3,7 +3,7 @@ import Parser from "./base-parser"
 import { LogParserInputDto } from "./dto/log-parser-input.dto";
 import { LogLevelType } from "./enum/log-level-type.enum";
 import { Config } from "./interface/config.interface";
-import Transformer from "./ lib/transformer";
+import Transformer from "./lib/transformer";
 
 export default class LogParser extends Parser<LogParserInputDto> {
     // depend on interface of Transformer not Transformer class

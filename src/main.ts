@@ -1,8 +1,8 @@
 
 import { config } from "./config"
 import LogParser from "./logger-parser"
-import IoOperation from "./ lib/IO-operation"
-import Transformer, { createTransformerInstance } from "./ lib/transformer"
+import IoOperation from "./lib/IO-operation"
+import Transformer, { createTransformerInstance } from "./lib/transformer"
 
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
