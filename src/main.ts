@@ -3,6 +3,7 @@ import { config } from "./config"
 import LogParser from "./logger-parser"
 import IoOperation from "./lib/IO-operation"
 import Transformer, { createTransformerInstance } from "./lib/transformer"
+import { LogLevelType } from "./enum/log-level-type.enum"
 
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
@@ -16,11 +17,11 @@ const bootstrap = async () => {
     const { input, output, level } = argv
 
     const logString = await ioOperation.read(input, 'utf-8')
-    const result = logParser.parse(logString, level)
+    const result = logParser.parse(logString, level || LogLevelType.ERROR)
     await ioOperation.write(output, result)
 
 }
 
-bootstrap().then(()=>{
+bootstrap().then(() => {
     console.log('>> Done!')
 });

@@ -1,5 +1,6 @@
+import { TransformerInterface } from "../interface/transformer.interface";
 
-export default class Transformer {
+export default class Transformer implements TransformerInterface {
 
     split(string: string, separator: string): Array<string> {
         return string.split(separator)
