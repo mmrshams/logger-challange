@@ -1,24 +1,25 @@
 
 import Parser from "./base-parser"
-import { LogParserInputDto } from "./dto/log-parser-input.dto";
+import { LogParsedDataDto } from "./dto/log-parser-input.dto";
 import { LogLevelType } from "./enum/log-level-type.enum";
 import { Config } from "./interface/config.interface";
-import Transformer from "./lib/transformer";
+import { TransformerInterface } from "./interface/transformer.interface";
 
-export default class LogParser extends Parser<LogParserInputDto> {
+
+export default class LogParser extends Parser<LogParsedDataDto> {
     // depend on interface of Transformer not Transformer class
-    transformer!: Transformer
+    transformer!: TransformerInterface
     config!: Config
     //use setter and getter
-    constructor(transformer: Transformer, config: Config) {
+    constructor(transformer: TransformerInterface, config: Config) {
         super();
         this.transformer = transformer
         this.config = config
     }
-    data!: Array<LogParserInputDto>
-    parse(string: string, level: LogLevelType): Array<LogParserInputDto> {
+    data!: Array<LogParsedDataDto>
+    parse(string: string, level: LogLevelType): Array<LogParsedDataDto> {
         if (!string || !level) throw new Error('please enter valid inputs')
-        const result: Array<LogParserInputDto> = []
+        const result: Array<LogParsedDataDto> = []
         const logs = this.transformer.split(string, '\n')
         logs.forEach(log => {
             const logParts = log.split(' - ')

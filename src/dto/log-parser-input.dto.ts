@@ -1,6 +1,6 @@
 
 import { LogLevelType } from "../enum/log-level-type.enum";
-import { baseParserInputDto } from "./base-parse-input.dto";
+import { BaseParsedDataDto } from "./base-parse-input.dto";
 
 interface logData {
     transactionId: string,
@@ -8,7 +8,7 @@ interface logData {
     err: string,
 }
 
-export interface LogParserInputDto extends baseParserInputDto {
+export interface LogParsedDataDto extends BaseParsedDataDto {
     loglevel: LogLevelType,
     timestamp: number,
     data?: Partial<logData>

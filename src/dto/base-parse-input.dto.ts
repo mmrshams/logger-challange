@@ -1,1 +1,1 @@
-export interface baseParserInputDto { }
+export interface BaseParsedDataDto { }
