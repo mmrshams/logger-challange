@@ -1,50 +1,74 @@
-# logger-challange
-Type-script code challenge  
+# Typescript code challenge
+ 
+## Please read this before review
+This code is implemented with typescript Tsconfig-google code style and some kind of javascript libraries 
+i did my best to keep the code clean and typesafe and with SOLID considerations
+you may find some complicated code without any reason, and some kind of over-engineering, i did it to show my skills  to use typescript features
+
+## Installation
+
+Use the package manager [YARN](https://yarnpkg.com/cli/node) to install dependencies.
+
+```bash
+yarn install 
+```
+
+## Usage
+
+```bash
+
+# for easy run project 
+ yarn start
+
+# for run  with dynamic inputs 
+ yarn start --input ./app.log --output ./errors.json
+
+# for run  with dynamic inputs and log level 
+## NOTE: you pick keys from data please prepare .env file and check src/config.ts
+ yarn start --input ./app.log --output ./errors.json --level debug
+
+# for run tests
+ yarn test
+```
+
+## Contributing
+this code is flexible for printing different kinds of log types, also you can pick data that you need front environment variables,
+it can be better if you add some features like tracing nested objects pick data like "user.id"
+
+## Code structure
+ > src
+ > > dto 
+ > > > data transfer object types (for validation in future)
+ > >
+ > > enums
+ > > > log-level-type
+ > > 
+ > > interface
+ > > > related interfaces
+ > > >
+ > > lib
+ > > > transformer
+ > > >
+ > > > IO operator
+ > > > 
+ > > main.ts
+ > > > entry point of project
+ > > >
+ > > logger-parser.ts
+ > > > core logic of parser
+ > >  
+ > > config.ts
+ > > > configurable variables
+ > > 
+ > errors.json
+ > 
+ > app.log
+ > >
+ > other files ...
+
+ 
 
 
-// Class and Domains:
-// fetch and read from flags [dynamic flag support map() typescript]
-// get and separate result
-// prepare output data
-// class I/O read() and  write() functions
-// error handling
-// base parser class and logger-parser 
 
-// NOTES:
-// cover completely with unit tests (per file )
-// write some stress test (nice to have!)
-// prepare typescript project on 4 version: 
-//  - (js [], typescript one file [] , typescript project [] + readme.md + nest.js [])
-// type-safe with separate interfaces and clean architecture 
-// check code coverage with tools like istanbul maybe
-// write documentation per function its really important
-// R&D about  OOD principles (DRY, SLAP, SOLID, etc).
-
-// ANALYSE:
-// check time and space complexity and iterations for large size of log files
-// prepare main class and flow of async await 
-
-
-// FLOW OF IMPLEMENTATION: 
-// 1. read input file [done]
-// 2. transform A => middle class => with some terms(commands) input [done]
-// 3. transform B => middle class => with some terms(commands) output  [done]
-// 4. write output file  [done]
-// interfaces : [ interface data middle , interface input (reflection), interface output , ..] [done]
-// consider the most dynamic  scenario and change it to const parts [done]
-// use create instance function [done]
-// use reflection and validation [not for now]
-// use generic types [done]
-
-// use some kind of design patterns [not for now]
-// use getter / setter [NFN (not for now)]
-
-TODO: 
-// command line fix  [done]
-// interface and Solid fix transformer [done]
-// naming convention fixes [done]
-// test with good coverage [done]
-// SOLID DRY SLAP principles check
-// write it with nest.js 
-// write it on one ts file  
-// readme.d complete
+## License
+ - no license
