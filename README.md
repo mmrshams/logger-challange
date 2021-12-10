@@ -4,7 +4,8 @@
 This code is implemented with typescript Tsconfig-google code style and some kind of javascript libraries 
 i did my best to keep the code clean and typesafe and with SOLID considerations
 you may find some complicated code without any reason, and some kind of over-engineering, i did it to show my skills  to use typescript features
-
+you find the history of my work also on github :
+- https://github.com/mmrshams/logger-challange
 ## Installation
 
 Use the package manager [YARN](https://yarnpkg.com/cli/node) to install dependencies.
@@ -18,7 +19,7 @@ yarn install
 ```bash
 
 # for easy run project 
- yarn start
+ yarn start:dev
 
 # for run  with dynamic inputs 
  yarn start --input ./app.log --output ./errors.json
